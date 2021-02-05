@@ -6,12 +6,12 @@
 
 $(() => {
 
-for(let i = 1;i <= 6; i++){
-    const $row = $('<div>').addClass('row')
-    $('body').append($row)
-    for(let j = 1;j <= 7;j++){
+for(let i = 1;i <= 7; i++){
+    const $column = $('<div>').addClass('column')
+    $('#container').append($column)
+    for(let j = 1;j <= 6;j++){
         const $circle = $('<div>').addClass('circle')
-        $row.append($circle)
+        $column.append($circle)
     }
 
 }
