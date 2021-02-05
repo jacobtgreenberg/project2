@@ -7,7 +7,7 @@
 $(() => {
 
 for(let i = 1;i <= 6; i++){
-    const $row = $('<div>')
+    const $row = $('<div>').addClass('row')
     $('body').append($row)
     for(let j = 1;j <= 7;j++){
         const $circle = $('<div>').addClass('circle')
