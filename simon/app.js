@@ -58,7 +58,7 @@ function loopThroughComputerArray() {
         }
         counter++
     }   
-    , 1005)
+    , 800)
 }
 
 // loopThroughComputerArray()
@@ -152,7 +152,7 @@ function toggleRed() {
          console.log(playerArray[clickCounter])
          clickCounter++;
          if(clickCounter === computerArray.length){
-             prompt("Next level!")
+            //  prompt("Next level!")
              clickCounter = 0
              playerArray = []
              score = computerArray.length 
@@ -174,7 +174,7 @@ function toggleBlue() {
      if(computerArray[clickCounter] === playerArray[clickCounter]){
          clickCounter++;
          if(clickCounter === computerArray.length){
-             prompt("Next level!")
+            //  prompt("Next level!")
              clickCounter = 0
              playerArray = []
              score = computerArray.length 
@@ -195,7 +195,7 @@ function toggleYellow() {
      if(computerArray[clickCounter] === playerArray[clickCounter]){
          clickCounter++;
          if(clickCounter === computerArray.length){
-             prompt("Next level!")
+            //  prompt("Next level!")
              clickCounter = 0
              playerArray = []
              score = computerArray.length
@@ -216,7 +216,7 @@ function toggleGreen() {
      if(computerArray[clickCounter] === playerArray[clickCounter]){
          clickCounter++;
          if(clickCounter === computerArray.length){
-             prompt("Next level!")
+            //  prompt("Next level!")
              clickCounter = 0
              playerArray = []
              score = computerArray.length
