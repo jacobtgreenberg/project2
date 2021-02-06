@@ -19,6 +19,12 @@ const playerArray = [];
 
 let level = 1005;
 
+//if clickCounter === computerArray.length player turn over --- need to empty array, if playerArray[clickCounter] === computerArray[clickCounter] gets a point, if != game over
+let clickCounter = 0
+
+//keep track of players score
+let score = 0
+
 function startInterval() {
     const interval = setInterval(lightRandomColor, 1000 )
     setTimeout(() => {
