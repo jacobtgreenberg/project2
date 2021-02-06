@@ -36,33 +36,33 @@ function startInterval() {
 
 
 
-function loopThroughComputerArray() {
-    let counter = 0;
+// function loopThroughComputerArray() {
+//     let counter = 0;
     
-    const start = setInterval( () =>  {
-        if(computerArray[counter] === 1){
-            toggleRed()
-        }else if(computerArray[counter] === 2){
-            toggleBlue()
-        }else if(computerArray[counter] === 3){
-            toggleYellow()
-        }else if(computerArray[counter] === 4){
-            toggleGreen()
-        }else{
-            lightRandomColor();
-            setTimeout(() => {clearInterval(start)},1000 )
-        }
-        counter++
-    }   
-    , 1005)
-}
+//     const start = setInterval( () =>  {
+//         if(computerArray[counter] === 1){
+//             toggleRed()
+//         }else if(computerArray[counter] === 2){
+//             toggleBlue()
+//         }else if(computerArray[counter] === 3){
+//             toggleYellow()
+//         }else if(computerArray[counter] === 4){
+//             toggleGreen()
+//         }else{
+//             lightRandomColor();
+//             setTimeout(() => {clearInterval(start)},1000 )
+//         }
+//         counter++
+//     }   
+//     , 1005)
+// }
 
-loopThroughComputerArray()
+// loopThroughComputerArray()
 
 function lightRandomColor() {
-    const randomIndex = Math.ceil(Math.random() * 4)
+    const randomIndex = /*Math.ceil(Math.random() * 4)*/ 1
     if(randomIndex === 1){
-        toggleRed()
+        toggleRedC()
         computerArray.push(1)
         console.log(computerArray)
     }else if(randomIndex === 2){
@@ -80,7 +80,7 @@ function lightRandomColor() {
     }
 }
 
-
+lightRandomColor()
 
 // When passed into click event is called
 // function toggleColor(color) {
@@ -90,11 +90,28 @@ function lightRandomColor() {
 //     }, 400)
 // }
 
+
+function toggleRedC() {
+    $('.red').toggleClass('redLit')
+     setTimeout(() => {
+         $('.red').toggleClass('redLit')
+     }, 400)
+}
+
 function toggleRed() {
     $('.red').toggleClass('redLit')
      setTimeout(() => {
          $('.red').toggleClass('redLit')
      }, 400)
+     playerArray.push(1)
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 
