@@ -15,7 +15,7 @@
 $(()  => {
 
 const computerArray = [];
-const playerArray = [];
+let playerArray = [];
 
 //// determines when to clear interval on startInterval function, may be obsolete
 let level = 3005;
@@ -27,35 +27,35 @@ let clickCounter = 0
 let score = 0
 
 ///gets random color to go and start, may be obsolete, may need to house
-function startInterval() {
-    const interval = setInterval(lightRandomColor, 1000 )
-    setTimeout(() => {
-        clearInterval(interval)
-    }, level)
-}
-
-startInterval()
-
-// function loopThroughComputerArray() {
-//     let counter = 0;
-    
-//     const start = setInterval( () =>  {
-//         if(computerArray[counter] === 1){
-//             toggleRed()
-//         }else if(computerArray[counter] === 2){
-//             toggleBlue()
-//         }else if(computerArray[counter] === 3){
-//             toggleYellow()
-//         }else if(computerArray[counter] === 4){
-//             toggleGreen()
-//         }else{
-//             lightRandomColor();
-//             setTimeout(() => {clearInterval(start)},1000 )
-//         }
-//         counter++
-//     }   
-//     , 1005)
+// function startInterval() {
+//     const interval = setInterval(lightRandomColor, 1000 )
+//     setTimeout(() => {
+//         clearInterval(interval)
+//     }, level)
 // }
+
+// startInterval()
+
+function loopThroughComputerArray() {
+    let counter = 0;
+    
+    const start = setInterval( () =>  {
+        if(computerArray[counter] === 1){
+            toggleRedC()
+        }else if(computerArray[counter] === 2){
+            toggleBlueC()
+        }else if(computerArray[counter] === 3){
+            toggleYellowC()
+        }else if(computerArray[counter] === 4){
+            toggleGreenC()
+        }else{
+            lightRandomColor();
+            setTimeout(() => {clearInterval(start)},100 )
+        }
+        counter++
+    }   
+    , 1005)
+}
 
 // loopThroughComputerArray()
 
@@ -64,7 +64,7 @@ function lightRandomColor() {
     if(randomIndex === 1){
         toggleRedC()
         computerArray.push(1)
-        console.log(computerArray)
+        console.log("computer Array" + computerArray)
     }else if(randomIndex === 2){
         toggleBlueC()
         computerArray.push(2)
@@ -80,9 +80,9 @@ function lightRandomColor() {
     }
 }
 
-// lightRandomColor()
+lightRandomColor()
 
-// When passed into click event is called
+// Issue: When passed into click event is called
 // function toggleColor(color) {
 //     $('.red').toggleClass(color + 'Lit')
 //     setTimeout(() => {
@@ -90,7 +90,7 @@ function lightRandomColor() {
 //     }, 400)
 // }
 
-
+//Can rewrite computer functions into one with parameter
 function toggleRedC() {
     $('.red').toggleClass('redLit')
      setTimeout(() => {
@@ -126,9 +126,13 @@ function toggleRed() {
      }, 400)
      playerArray.push(1)
      if(computerArray[clickCounter] === playerArray[clickCounter]){
+         console.log(playerArray[clickCounter])
          clickCounter++;
          if(clickCounter === computerArray.length){
              prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             loopThroughComputerArray()
          }
      }else{
          prompt("You lose!")
@@ -146,6 +150,9 @@ function toggleBlue() {
          clickCounter++;
          if(clickCounter === computerArray.length){
              prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             loopThroughComputerArray()
          }
      }else{
          prompt("You lose!")
@@ -162,6 +169,9 @@ function toggleYellow() {
          clickCounter++;
          if(clickCounter === computerArray.length){
              prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             loopThroughComputerArray()
          }
      }else{
          prompt("You lose!")
@@ -178,6 +188,9 @@ function toggleGreen() {
          clickCounter++;
          if(clickCounter === computerArray.length){
              prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             loopThroughComputerArray()
          }
      }else{
          prompt("You lose!")
