@@ -18,7 +18,7 @@ const computerArray = [];
 const playerArray = [];
 
 //// determines when to clear interval on startInterval function, may be obsolete
-let level = 8005;
+let level = 3005;
 
 //if clickCounter === computerArray.length player turn over --- need to empty array, if playerArray[clickCounter] === computerArray[clickCounter] gets a point, if != game over
 let clickCounter = 0
@@ -141,6 +141,15 @@ function toggleBlue() {
     setTimeout(() => {
         $('.blue').toggleClass('blueLit')
     }, 400)
+    playerArray.push(2)
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 function toggleYellow() {
@@ -148,6 +157,15 @@ function toggleYellow() {
     setTimeout(() => {
         $('.yellow').toggleClass('yellowLit')
     }, 400)
+    playerArray.push(3)
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 function toggleGreen() {
@@ -155,6 +173,15 @@ function toggleGreen() {
     setTimeout(() => {
         $('.green').toggleClass('greenLit')
     }, 400)
+    playerArray.push(4)
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 $('.red').on('click', toggleRed)
