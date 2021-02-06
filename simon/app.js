@@ -17,6 +17,11 @@ $(()  => {
 const computerArray = [];
 let playerArray = [];
 
+const ding = $('#ding');
+
+$('.red').on('click', () => {
+    $('#ding').get(0).play()
+})
 //// determines when to clear interval on startInterval function, may be obsolete
 let level = 3005;
 
