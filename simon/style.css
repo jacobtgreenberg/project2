@@ -1,0 +1,38 @@
+div {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.redLit {
+    background-color: #fca19a
+}
+
+.blueLit {
+    background-color: #77f8fc;
+}
+
+.yellowLit {
+    background-color: #fffeb8;
+}
+
+.greenLit {
+    background-color: #c3ffb8;
+}
