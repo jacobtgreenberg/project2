@@ -11,18 +11,19 @@ $(()  => {
 function lightRandomColor() {
     const randomIndex = Math.ceil(Math.random() * 4)
     if(randomIndex === 1){
-        toggleRed
-    }
+        toggleRed()
+    }else if(randomIndex === 2){
+        toggleBlue()
+    }else if(randomIndex === 3){
+        toggleYellow()
+    }else if(randomIndex === 4)[
+        toggleGreen()
+    ]
 }
 
-lightRandomColor()
+lightRandomColor() 
 
-// function toggleRed(e) {
-//     $(e.target).toggleClass('redLit')
-//      setTimeout(() => {
-//          $(e.target).toggleClass('redLit')
-//      }, 400)
-// }
+
 
 function toggleRed() {
     $('.red').toggleClass('redLit')
