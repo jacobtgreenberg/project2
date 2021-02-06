@@ -64,7 +64,7 @@ function loopThroughComputerArray() {
 // loopThroughComputerArray()
 
 function lightRandomColor() {
-    const randomIndex = /*Math.ceil(Math.random() * 4)*/ 1
+    const randomIndex = Math.ceil(Math.random() * 4)
     if(randomIndex === 1){
         toggleRedC()
         computerArray.push(1)
@@ -110,6 +110,7 @@ function toggleBlueC() {
      setTimeout(() => {
          $('.blue').toggleClass('blueLit')
      }, 400)
+     $('#bleep').get(0).play()
 }
 
 function toggleYellowC() {
@@ -117,6 +118,7 @@ function toggleYellowC() {
      setTimeout(() => {
          $('.yellow').toggleClass('yellowLit')
      }, 400)
+     $('#ping').get(0).play()
 }
 
 function toggleGreenC() {
@@ -124,6 +126,7 @@ function toggleGreenC() {
      setTimeout(() => {
          $('.green').toggleClass('greenLit')
      }, 400)
+     $('#beep').get(0).play()
 }
 
 $('.red').on('click', () => {
@@ -168,19 +171,19 @@ function toggleBlue() {
         $('.blue').toggleClass('blueLit')
     }, 400)
     playerArray.push(2)
-    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
-    //      clickCounter++;
-    //      if(clickCounter === computerArray.length){
-    //          prompt("Next level!")
-    //          clickCounter = 0
-    //          playerArray = []
-    //          score = computerArray.length 
-    //          $('#score').text('Score: ' + score)
-    //          loopThroughComputerArray()
-    //      }
-    //  }else{
-    //      prompt("You lose!")
-    //  }
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             score = computerArray.length 
+             $('#score').text('Score: ' + score)
+             loopThroughComputerArray()
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 function toggleYellow() {
@@ -189,19 +192,19 @@ function toggleYellow() {
         $('.yellow').toggleClass('yellowLit')
     }, 400)
     playerArray.push(3)
-    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
-    //      clickCounter++;
-    //      if(clickCounter === computerArray.length){
-    //          prompt("Next level!")
-    //          clickCounter = 0
-    //          playerArray = []
-    //          score = computerArray.length
-    //          $('#score').text('Score: ' + score)
-    //          loopThroughComputerArray()
-    //      }
-    //  }else{
-    //      prompt("You lose!")
-    //  }
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             score = computerArray.length
+             $('#score').text('Score: ' + score)
+             loopThroughComputerArray()
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 function toggleGreen() {
@@ -210,19 +213,19 @@ function toggleGreen() {
         $('.green').toggleClass('greenLit')
     }, 400)
     playerArray.push(4)
-    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
-    //      clickCounter++;
-    //      if(clickCounter === computerArray.length){
-    //          prompt("Next level!")
-    //          clickCounter = 0
-    //          playerArray = []
-    //          score = computerArray.length
-    //          $('#score').text('Score: ' + score)
-    //          loopThroughComputerArray()
-    //      }
-    //  }else{
-    //      prompt("You lose!")
-    //  }
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             score = computerArray.length
+             $('#score').text('Score: ' + score)
+             loopThroughComputerArray()
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 $('.red').on('click', toggleRed)
