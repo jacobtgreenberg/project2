@@ -132,6 +132,8 @@ function toggleRed() {
              prompt("Next level!")
              clickCounter = 0
              playerArray = []
+             score = computerArray.length 
+             $('#score').text('Score: ' + score)
              loopThroughComputerArray()
          }
      }else{
@@ -152,6 +154,8 @@ function toggleBlue() {
              prompt("Next level!")
              clickCounter = 0
              playerArray = []
+             score = computerArray.length 
+             $('#score').text('Score: ' + score)
              loopThroughComputerArray()
          }
      }else{
@@ -171,6 +175,8 @@ function toggleYellow() {
              prompt("Next level!")
              clickCounter = 0
              playerArray = []
+             score = computerArray.length
+             $('#score').text('Score: ' + score)
              loopThroughComputerArray()
          }
      }else{
@@ -190,6 +196,8 @@ function toggleGreen() {
              prompt("Next level!")
              clickCounter = 0
              playerArray = []
+             score = computerArray.length
+             $('#score').text('Score: ' + score)
              loopThroughComputerArray()
          }
      }else{
