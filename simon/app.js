@@ -14,9 +14,10 @@
 
 $(()  => {
 
-const computerArray = [1, 1, 2, 3, 1, 4, 1, 2];
+const computerArray = [];
 const playerArray = [];
 
+//// determines when to clear interval on startInterval function, may be obsolete
 let level = 1005;
 
 //if clickCounter === computerArray.length player turn over --- need to empty array, if playerArray[clickCounter] === computerArray[clickCounter] gets a point, if != game over
@@ -25,6 +26,7 @@ let clickCounter = 0
 //keep track of players score
 let score = 0
 
+///gets random color to go and start, may be obsolete, may need to house
 function startInterval() {
     const interval = setInterval(lightRandomColor, 1000 )
     setTimeout(() => {
@@ -37,7 +39,7 @@ function startInterval() {
 function loopThroughComputerArray() {
     let counter = 0;
     
-    setInterval( () =>  {
+    const start = setInterval( () =>  {
         if(computerArray[counter] === 1){
             toggleRed()
         }else if(computerArray[counter] === 2){
@@ -46,6 +48,9 @@ function loopThroughComputerArray() {
             toggleYellow()
         }else if(computerArray[counter] === 4){
             toggleGreen()
+        }else{
+            lightRandomColor();
+            setTimeout(() => {clearInterval(start)},1000 )
         }
         counter++
     }   
@@ -58,12 +63,20 @@ function lightRandomColor() {
     const randomIndex = Math.ceil(Math.random() * 4)
     if(randomIndex === 1){
         toggleRed()
+        computerArray.push(1)
+        console.log(computerArray)
     }else if(randomIndex === 2){
         toggleBlue()
+        computerArray.push(2)
+        console.log(computerArray)
     }else if(randomIndex === 3){
         toggleYellow()
+        computerArray.push(3)
+        console.log(computerArray)
     }else if(randomIndex === 4){
         toggleGreen()
+        computerArray.push(4)
+        console.log(computerArray)
     }
 }
 
