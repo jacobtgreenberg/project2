@@ -18,7 +18,7 @@ const computerArray = [];
 const playerArray = [];
 
 //// determines when to clear interval on startInterval function, may be obsolete
-let level = 1005;
+let level = 8005;
 
 //if clickCounter === computerArray.length player turn over --- need to empty array, if playerArray[clickCounter] === computerArray[clickCounter] gets a point, if != game over
 let clickCounter = 0
@@ -34,7 +34,7 @@ function startInterval() {
     }, level)
 }
 
-
+startInterval()
 
 // function loopThroughComputerArray() {
 //     let counter = 0;
@@ -60,27 +60,27 @@ function startInterval() {
 // loopThroughComputerArray()
 
 function lightRandomColor() {
-    const randomIndex = /*Math.ceil(Math.random() * 4)*/ 1
+    const randomIndex = Math.ceil(Math.random() * 4)
     if(randomIndex === 1){
         toggleRedC()
         computerArray.push(1)
         console.log(computerArray)
     }else if(randomIndex === 2){
-        toggleBlue()
+        toggleBlueC()
         computerArray.push(2)
         console.log(computerArray)
     }else if(randomIndex === 3){
-        toggleYellow()
+        toggleYellowC()
         computerArray.push(3)
         console.log(computerArray)
     }else if(randomIndex === 4){
-        toggleGreen()
+        toggleGreenC()
         computerArray.push(4)
         console.log(computerArray)
     }
 }
 
-lightRandomColor()
+// lightRandomColor()
 
 // When passed into click event is called
 // function toggleColor(color) {
@@ -95,6 +95,27 @@ function toggleRedC() {
     $('.red').toggleClass('redLit')
      setTimeout(() => {
          $('.red').toggleClass('redLit')
+     }, 400)
+}
+
+function toggleBlueC() {
+    $('.blue').toggleClass('blueLit')
+     setTimeout(() => {
+         $('.blue').toggleClass('blueLit')
+     }, 400)
+}
+
+function toggleYellowC() {
+    $('.yellow').toggleClass('yellowLit')
+     setTimeout(() => {
+         $('.yellow').toggleClass('yellowLit')
+     }, 400)
+}
+
+function toggleGreenC() {
+    $('.green').toggleClass('greenLit')
+     setTimeout(() => {
+         $('.green').toggleClass('greenLit')
      }, 400)
 }
 
