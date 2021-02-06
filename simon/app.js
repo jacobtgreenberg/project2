@@ -19,18 +19,7 @@ let playerArray = [];
 
 const ping = ('#ping')
 
-$('.red').on('click', () => {
-    $('#ding').get(0).play()
-})
-$('.yellow').on('click', () => {
-    $('#ping').get(0).play()
-})
-$('.green').on('click', () => {
-    $('#beep').get(0).play()
-})
-$('.blue').on('click', () => {
-    $('#bleep').get(0).play()
-})
+
 
 //// determines when to clear interval on startInterval function, may be obsolete
 let level = 3005;
@@ -75,7 +64,7 @@ function loopThroughComputerArray() {
 // loopThroughComputerArray()
 
 function lightRandomColor() {
-    const randomIndex = Math.ceil(Math.random() * 4)
+    const randomIndex = /*Math.ceil(Math.random() * 4)*/ 1
     if(randomIndex === 1){
         toggleRedC()
         computerArray.push(1)
@@ -95,7 +84,7 @@ function lightRandomColor() {
     }
 }
 
-// lightRandomColor()
+setTimeout(lightRandomColor, 1000)
 
 // Issue: When passed into click event is called
 // function toggleColor(color) {
@@ -111,7 +100,10 @@ function toggleRedC() {
      setTimeout(() => {
          $('.red').toggleClass('redLit')
      }, 400)
+     $('#ding').get(0).play()
 }
+
+
 
 function toggleBlueC() {
     $('.blue').toggleClass('blueLit')
@@ -134,26 +126,39 @@ function toggleGreenC() {
      }, 400)
 }
 
+$('.red').on('click', () => {
+    $('#ding').get(0).play()
+})
+$('.yellow').on('click', () => {
+    $('#ping').get(0).play()
+})
+$('.green').on('click', () => {
+    $('#beep').get(0).play()
+})
+$('.blue').on('click', () => {
+    $('#bleep').get(0).play()
+})
+
 function toggleRed() {
     $('.red').toggleClass('redLit')
      setTimeout(() => {
          $('.red').toggleClass('redLit')
      }, 400)
      playerArray.push(1)
-    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
-    //      console.log(playerArray[clickCounter])
-    //      clickCounter++;
-    //      if(clickCounter === computerArray.length){
-    //          prompt("Next level!")
-    //          clickCounter = 0
-    //          playerArray = []
-    //          score = computerArray.length 
-    //          $('#score').text('Score: ' + score)
-    //          loopThroughComputerArray()
-    //      }
-    //  }else{
-    //      prompt("You lose!")
-    //  }
+     if(computerArray[clickCounter] === playerArray[clickCounter]){
+         console.log(playerArray[clickCounter])
+         clickCounter++;
+         if(clickCounter === computerArray.length){
+             prompt("Next level!")
+             clickCounter = 0
+             playerArray = []
+             score = computerArray.length 
+             $('#score').text('Score: ' + score)
+             loopThroughComputerArray()
+         }
+     }else{
+         prompt("You lose!")
+     }
 }
 
 
