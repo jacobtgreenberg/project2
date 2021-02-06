@@ -124,6 +124,7 @@ $(()  => {
 
 
 
+
     function toggle (event, color, number) {
         $(event.target).toggleClass(color + 'Lit')
         setTimeout(() => {
@@ -138,7 +139,7 @@ $(()  => {
                 clickCounter = 0
                 playerArray = []
                 score = computerArray.length 
-                $('#score').text('Score: ' + score)
+                $('#score').text(score)
                 setTimeout(loopThroughComputerArray, 1000)
             }
         }else{
@@ -150,10 +151,10 @@ $(()  => {
     
 
     
-    $('.red').on('click', () => {toggle(event, 'red', 1)})
-    $('.blue').on('click', () => {toggle(event, 'blue', 2) })
-    $('.yellow').on('click', () => {toggle(event,'yellow', 3)})
-    $('.green').on('click', () => {toggle(event,'green'), 4})
+    $('.red').on('click', () => toggle(event, 'red', 1))
+    $('.blue').on('click', () => toggle(event, 'blue', 2))
+    $('.yellow').on('click', () => toggle(event,'yellow', 3))
+    $('.green').on('click', () => toggle(event,'green', 4))
     
     
     

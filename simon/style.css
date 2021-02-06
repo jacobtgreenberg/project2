@@ -9,6 +9,10 @@ div {
     display: inline-block;
 }
 
+#score {
+    color: white;
+}
+
 .red {
     background-color: red;
 }
