@@ -6,7 +6,17 @@
 
 
 
-$(()  => {
+// $(()  => {
+
+
+//     setInterval(()=> {
+
+//         lightRandomColor()
+        
+        
+//         }, 1000 )
+
+
 
 function lightRandomColor() {
     const randomIndex = Math.ceil(Math.random() * 4)
@@ -21,9 +31,16 @@ function lightRandomColor() {
     ]
 }
 
-lightRandomColor() 
+// lightRandomColor() 
 
 
+// When passed into click event is called
+// function toggleColor(color) {
+//     $('.red').toggleClass(color + 'Lit')
+//     setTimeout(() => {
+//         $('.red').toggleClass(color + 'Lit')
+//     }, 400)
+// }
 
 function toggleRed() {
     $('.red').toggleClass('redLit')
@@ -40,14 +57,14 @@ function toggleBlue() {
     }, 400)
 }
 
-function toggleYellow(e) {
+function toggleYellow() {
     $('.yellow').toggleClass('yellowLit')
     setTimeout(() => {
         $('.yellow').toggleClass('yellowLit')
     }, 400)
 }
 
-function toggleGreen(e) {
+function toggleGreen() {
     $('.green').toggleClass('greenLit')
     setTimeout(() => {
         $('.green').toggleClass('greenLit')
