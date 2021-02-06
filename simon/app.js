@@ -15,8 +15,31 @@ function toggleRed(e) {
      }, 400)
 }
 
-$('.red').on('click', toggleRed)
+function toggleBlue(e) {
+    $(e.target).toggleClass('blueLit')
+    setTimeout(() => {
+        $(e.target).toggleClass('blueLit')
+    }, 400)
+}
 
+function toggleYellow(e) {
+    $(e.target).toggleClass('yellowLit')
+    setTimeout(() => {
+        $(e.target).toggleClass('yellowLit')
+    }, 400)
+}
+
+function toggleGreen(e) {
+    $(e.target).toggleClass('greenLit')
+    setTimeout(() => {
+        $(e.target).toggleClass('greenLit')
+    }, 400)
+}
+
+$('.red').on('click', toggleRed)
+$('.blue').on('click', toggleBlue)
+$('.yellow').on('click', toggleYellow)
+$('.green').on('click', toggleGreen)
 
 
 
@@ -27,27 +50,27 @@ $('.red').on('click', toggleRed)
 //      }, 400)
 //  })
 
- $('.blue').on('click', (e) => {
-    $(e.target).toggleClass('blueLit')
-    setTimeout(() => {
-        $(e.target).toggleClass('blueLit')
-    }, 400)
-})
+//  $('.blue').on('click', (e) => {
+//     $(e.target).toggleClass('blueLit')
+//     setTimeout(() => {
+//         $(e.target).toggleClass('blueLit')
+//     }, 400)
+// })
 
-$('.yellow').on('click', (e) => {
-    $(e.target).toggleClass('yellowLit')
-    setTimeout(() => {
-        $(e.target).toggleClass('yellowLit')
-    }, 400)
-})
+// $('.yellow').on('click', (e) => {
+//     $(e.target).toggleClass('yellowLit')
+//     setTimeout(() => {
+//         $(e.target).toggleClass('yellowLit')
+//     }, 400)
+// })
 
 
-$('.green').on('click', (e) => {
-    $(e.target).toggleClass('greenLit')
-    setTimeout(() => {
-        $(e.target).toggleClass('greenLit')
-    }, 400)
-})
+// $('.green').on('click', (e) => {
+//     $(e.target).toggleClass('greenLit')
+//     setTimeout(() => {
+//         $(e.target).toggleClass('greenLit')
+//     }, 400)
+// })
 
 
 
