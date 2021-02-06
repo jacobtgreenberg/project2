@@ -17,11 +17,21 @@ $(()  => {
 const computerArray = [];
 let playerArray = [];
 
-const ding = $('#ding');
+const ping = ('#ping')
 
 $('.red').on('click', () => {
     $('#ding').get(0).play()
 })
+$('.yellow').on('click', () => {
+    $('#ping').get(0).play()
+})
+$('.green').on('click', () => {
+    $('#beep').get(0).play()
+})
+$('.blue').on('click', () => {
+    $('#bleep').get(0).play()
+})
+
 //// determines when to clear interval on startInterval function, may be obsolete
 let level = 3005;
 
@@ -85,7 +95,7 @@ function lightRandomColor() {
     }
 }
 
-lightRandomColor()
+// lightRandomColor()
 
 // Issue: When passed into click event is called
 // function toggleColor(color) {
@@ -130,20 +140,20 @@ function toggleRed() {
          $('.red').toggleClass('redLit')
      }, 400)
      playerArray.push(1)
-     if(computerArray[clickCounter] === playerArray[clickCounter]){
-         console.log(playerArray[clickCounter])
-         clickCounter++;
-         if(clickCounter === computerArray.length){
-             prompt("Next level!")
-             clickCounter = 0
-             playerArray = []
-             score = computerArray.length 
-             $('#score').text('Score: ' + score)
-             loopThroughComputerArray()
-         }
-     }else{
-         prompt("You lose!")
-     }
+    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
+    //      console.log(playerArray[clickCounter])
+    //      clickCounter++;
+    //      if(clickCounter === computerArray.length){
+    //          prompt("Next level!")
+    //          clickCounter = 0
+    //          playerArray = []
+    //          score = computerArray.length 
+    //          $('#score').text('Score: ' + score)
+    //          loopThroughComputerArray()
+    //      }
+    //  }else{
+    //      prompt("You lose!")
+    //  }
 }
 
 
@@ -153,19 +163,19 @@ function toggleBlue() {
         $('.blue').toggleClass('blueLit')
     }, 400)
     playerArray.push(2)
-     if(computerArray[clickCounter] === playerArray[clickCounter]){
-         clickCounter++;
-         if(clickCounter === computerArray.length){
-             prompt("Next level!")
-             clickCounter = 0
-             playerArray = []
-             score = computerArray.length 
-             $('#score').text('Score: ' + score)
-             loopThroughComputerArray()
-         }
-     }else{
-         prompt("You lose!")
-     }
+    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
+    //      clickCounter++;
+    //      if(clickCounter === computerArray.length){
+    //          prompt("Next level!")
+    //          clickCounter = 0
+    //          playerArray = []
+    //          score = computerArray.length 
+    //          $('#score').text('Score: ' + score)
+    //          loopThroughComputerArray()
+    //      }
+    //  }else{
+    //      prompt("You lose!")
+    //  }
 }
 
 function toggleYellow() {
@@ -174,19 +184,19 @@ function toggleYellow() {
         $('.yellow').toggleClass('yellowLit')
     }, 400)
     playerArray.push(3)
-     if(computerArray[clickCounter] === playerArray[clickCounter]){
-         clickCounter++;
-         if(clickCounter === computerArray.length){
-             prompt("Next level!")
-             clickCounter = 0
-             playerArray = []
-             score = computerArray.length
-             $('#score').text('Score: ' + score)
-             loopThroughComputerArray()
-         }
-     }else{
-         prompt("You lose!")
-     }
+    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
+    //      clickCounter++;
+    //      if(clickCounter === computerArray.length){
+    //          prompt("Next level!")
+    //          clickCounter = 0
+    //          playerArray = []
+    //          score = computerArray.length
+    //          $('#score').text('Score: ' + score)
+    //          loopThroughComputerArray()
+    //      }
+    //  }else{
+    //      prompt("You lose!")
+    //  }
 }
 
 function toggleGreen() {
@@ -195,19 +205,19 @@ function toggleGreen() {
         $('.green').toggleClass('greenLit')
     }, 400)
     playerArray.push(4)
-     if(computerArray[clickCounter] === playerArray[clickCounter]){
-         clickCounter++;
-         if(clickCounter === computerArray.length){
-             prompt("Next level!")
-             clickCounter = 0
-             playerArray = []
-             score = computerArray.length
-             $('#score').text('Score: ' + score)
-             loopThroughComputerArray()
-         }
-     }else{
-         prompt("You lose!")
-     }
+    //  if(computerArray[clickCounter] === playerArray[clickCounter]){
+    //      clickCounter++;
+    //      if(clickCounter === computerArray.length){
+    //          prompt("Next level!")
+    //          clickCounter = 0
+    //          playerArray = []
+    //          score = computerArray.length
+    //          $('#score').text('Score: ' + score)
+    //          loopThroughComputerArray()
+    //      }
+    //  }else{
+    //      prompt("You lose!")
+    //  }
 }
 
 $('.red').on('click', toggleRed)
