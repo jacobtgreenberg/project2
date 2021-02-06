@@ -72,13 +72,7 @@ $(()  => {
     
     setTimeout(lightRandomColor, 1000)
     
-    // Issue: When passed into click event is called
-    // function toggleColor(color) {
-    //     $('.red').toggleClass(color + 'Lit')
-    //     setTimeout(() => {
-    //         $('.red').toggleClass(color + 'Lit')
-    //     }, 400)
-    // }
+
     
     //Can rewrite computer functions into one with parameter
     function toggleRedC() {
@@ -145,7 +139,7 @@ $(()  => {
                 playerArray = []
                 score = computerArray.length 
                 $('#score').text('Score: ' + score)
-                loopThroughComputerArray()
+                setTimeout(loopThroughComputerArray, 1000)
             }
         }else{
             prompt("You lose!")
@@ -154,91 +148,7 @@ $(()  => {
 
     
     
-    function toggleRed() {
-        $('.red').toggleClass('redLit')
-         setTimeout(() => {
-             $('.red').toggleClass('redLit')
-         }, 400)
-         playerArray.push(1)
-         if(computerArray[clickCounter] === playerArray[clickCounter]){
-             console.log(playerArray[clickCounter])
-             clickCounter++;
-             if(clickCounter === computerArray.length){
-                //  prompt("Next level!")
-                 clickCounter = 0
-                 playerArray = []
-                 score = computerArray.length 
-                 $('#score').text('Score: ' + score)
-                 loopThroughComputerArray()
-             }
-         }else{
-             prompt("You lose!")
-         }
-    }
-    
-    
-    function toggleBlue() {
-        $('.blue').toggleClass('blueLit')
-        setTimeout(() => {
-            $('.blue').toggleClass('blueLit')
-        }, 400)
-        playerArray.push(2)
-         if(computerArray[clickCounter] === playerArray[clickCounter]){
-             clickCounter++;
-             if(clickCounter === computerArray.length){
-                //  prompt("Next level!")
-                 clickCounter = 0
-                 playerArray = []
-                 score = computerArray.length 
-                 $('#score').text('Score: ' + score)
-                 loopThroughComputerArray()
-             }
-         }else{
-             prompt("You lose!")
-         }
-    }
-    
-    function toggleYellow() {
-        $('.yellow').toggleClass('yellowLit')
-        setTimeout(() => {
-            $('.yellow').toggleClass('yellowLit')
-        }, 400)
-        playerArray.push(3)
-         if(computerArray[clickCounter] === playerArray[clickCounter]){
-             clickCounter++;
-             if(clickCounter === computerArray.length){
-                //  prompt("Next level!")
-                 clickCounter = 0
-                 playerArray = []
-                 score = computerArray.length
-                 $('#score').text('Score: ' + score)
-                 loopThroughComputerArray()
-             }
-         }else{
-             prompt("You lose!")
-         }
-    }
-    
-    function toggleGreen() {
-        $('.green').toggleClass('greenLit')
-        setTimeout(() => {
-            $('.green').toggleClass('greenLit')
-        }, 400)
-        playerArray.push(4)
-         if(computerArray[clickCounter] === playerArray[clickCounter]){
-             clickCounter++;
-             if(clickCounter === computerArray.length){
-                //  prompt("Next level!")
-                 clickCounter = 0
-                 playerArray = []
-                 score = computerArray.length
-                 $('#score').text('Score: ' + score)
-                 loopThroughComputerArray()
-             }
-         }else{
-             prompt("You lose!")
-         }
-    }
+
     
     $('.red').on('click', () => {toggle(event, 'red', 1)})
     $('.blue').on('click', () => {toggle(event, 'blue', 2) })
