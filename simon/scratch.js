@@ -53,16 +53,16 @@ $(()  => {
     }
     
     
-    function toggle (event, color, number) {
+    function toggle (event, color, number, sound) {
         $(event.target).toggleClass(color + 'Lit')
         setTimeout(() => {
             $(event.target).toggleClass(color + 'Lit')
         }, 400)
         playerArray.push(number)
         if(computerArray[clickCounter] === playerArray[clickCounter]){
+            $(sound).get(0).play();
             clickCounter++;
-            if(clickCounter === computerArray.length){
-               //  prompt("Next level!")
+            if(clickCounter === computerArray.length){              
                 clickCounter = 0
                 playerArray = []
                 score = computerArray.length 
@@ -74,15 +74,15 @@ $(()  => {
         }
     }
 
-    $('.red').on('click', () => toggle(event, 'red', 1))
-    $('.blue').on('click', () => toggle(event, 'blue', 2))
-    $('.yellow').on('click', () => toggle(event,'yellow', 3))
-    $('.green').on('click', () => toggle(event,'green', 4))
+    $('.red').on('click', () => toggle(event, 'red', 1, '#ding'))
+    $('.blue').on('click', () => toggle(event, 'blue', 2, '#bleep'))
+    $('.yellow').on('click', () => toggle(event,'yellow', 3, '#ping'))
+    $('.green').on('click', () => toggle(event,'green', 4, '#beep'))
     
-    $('.red').on('click', () => $('#ding').get(0).play())
-    $('.yellow').on('click', () => $('#ping').get(0).play())
-    $('.green').on('click', () => $('#beep').get(0).play())
-    $('.blue').on('click', () => $('#bleep').get(0).play())
+    // $('.red').on('click', () => $('#ding').get(0).play())
+    // $('.yellow').on('click', () => $('#ping').get(0).play())
+    // $('.green').on('click', () => $('#beep').get(0).play())
+    // $('.blue').on('click', () => $('#bleep').get(0).play())
 
 
     setTimeout(lightRandomColor, 1000)
