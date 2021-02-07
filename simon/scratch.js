@@ -74,9 +74,16 @@ $(()  => {
             computerArray = []
             playerArray = []
             clickCounter = 0
+            $('#score').empty()
+            if(score > $('#hi_score').text()){
+                $('#hi_score').text(score)
+            }
             setTimeout(lightRandomColor, 1300)
+
         }
     }
+
+  
 
     $('.red').on('click', () => toggle(event, 'red', 1, '#ding'))
     $('.blue').on('click', () => toggle(event, 'blue', 2, '#bleep'))

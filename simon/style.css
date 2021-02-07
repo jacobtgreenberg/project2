@@ -13,7 +13,7 @@ div:hover {
     cursor: pointer;
 }
 
-#score {
+#score, #hi_score {
     color: white;
     font-size: 120px;
 }
