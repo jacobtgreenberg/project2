@@ -17,6 +17,14 @@
         let strikes = 0;
         let lettersCorrect = 0;
         let $chosenWord;
+
+        $("#start_game").on('click', (e) => {
+            $('p').remove()
+            $(e.target).remove()
+            setAlphabet()
+            pickWord()
+            setWord()
+        })
         
         function removeWord(){
             console.log(wordBank)
@@ -39,6 +47,9 @@
         function setAlphabet() {
             for(letter of alphabet ){
                 const $div = $('<div>').text(letter).addClass('omega')
+                if($div.text() === 'y' || $div.text() === 'z'){
+                    $div.addClass('yz')
+                }
                 $('#alpha').append($div)
                 $div.on('click', checkWord)
             }
@@ -111,9 +122,9 @@
             })
         }
         
-    setAlphabet()
-    pickWord()
-    setWord()
+    // setAlphabet()
+    // pickWord()
+    // setWord()
    
 
         
