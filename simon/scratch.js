@@ -6,6 +6,7 @@ $(()  => {
     let level = 3005;
     let clickCounter = 0
     let score = 0
+    let start;
     
     function toggleC(call, color, sound){
         $(call).toggleClass(color + 'Lit')
@@ -45,7 +46,7 @@ $(()  => {
                 toggleC('.green', 'green', '#beep')
             }else{
                 lightRandomColor();
-                setTimeout(() => {clearInterval(start)},100 )
+                clearInterval(start)
             }
             counter++
         }   
@@ -79,7 +80,7 @@ $(()  => {
                 $('#hi_score').text(score)
             }
             setTimeout(lightRandomColor, 1300)
-
+            setTimeout(repeatIntro, 1300)
         }
     }
 
@@ -90,7 +91,34 @@ $(()  => {
     $('.yellow').on('click', () => toggle(event,'yellow', 3, '#ping'))
     $('.green').on('click', () => toggle(event,'green', 4, '#beep'))
 
+    $('.red').on('click', stopRepeat)
+    $('.blue').on('click', stopRepeat)
+    $('.yellow').on('click', stopRepeat)
+    $('.green').on('click', stopRepeat)
+
 
     setTimeout(lightRandomColor, 1000)
+    setTimeout(repeatIntro, 1000)
+
+   
+
+    function repeatIntro() {
+        start = setInterval( () =>  {
+            if(computerArray[0] === 1){
+                toggleC('.red', 'red', '#ding')
+            }else if(computerArray[0] === 2){
+                toggleC('.blue', 'blue', '#bleep')
+            }else if(computerArray[0] === 3){
+                toggleC('.yellow', 'yellow', '#ping')
+            }else if(computerArray[0] === 4){
+                toggleC('.green', 'green', '#beep')
+            }
+        }   
+        , 4000)
+    }
+
+    function stopRepeat() {
+        clearInterval(start)
+    }
      
     })
