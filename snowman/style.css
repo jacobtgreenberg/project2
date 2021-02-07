@@ -20,11 +20,12 @@
 .current {
     height: 40px;
     width: 40px;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     margin-top: 8px;
     text-align: center;
     line-height: 40px;
     font-size: 28px;
+    color: white;
 }
 
 #container{
@@ -34,7 +35,7 @@
     justify-content: space-around;
     height: 60px;
     width: 260px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
 }
 

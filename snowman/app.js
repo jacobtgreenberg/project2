@@ -23,15 +23,18 @@ function checkWord(e){
         $(e.target).remove();
         for(child of $('#container').children()){
             if($(child).text() == $chosen){
-                $(child).css('background-color','blue')
+                $(child).css('color','black')
             }
             }
     }else{
-        $(e.target).css('background-color','red');
+        $(e.target).remove();
         strikes++;
         if(strikes == 1){
             $('#chances').text(strikes + " strike")
-        }else{
+        }else if(strikes == 6){
+            $('#chances').text("Ya lose.")
+        }
+        else{
             $('#chances').text(strikes + " strikes")
         }
     }
