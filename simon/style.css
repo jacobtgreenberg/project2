@@ -24,7 +24,7 @@ body {
     display: inline-block;
 }
 
-div:hover {
+.square:hover {
     cursor: pointer;
 }
 
