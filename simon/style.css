@@ -2,10 +2,17 @@ body {
     background: black;
 }
 
-div {
+#container {
+    height: 410px;
+    width: 410px;
+    margin: auto;
+    padding-top: 160px;
+}
+
+.square {
     height: 200px;
     width: 200px;
-    border: 1px solid black;
+    border: 1px solid white;
     display: inline-block;
 }
 
