@@ -28,6 +28,10 @@
     color: white;
 }
 
+.omega:hover {
+    cursor: pointer;
+}
+
 #container{
     display: flex;
     margin: auto;

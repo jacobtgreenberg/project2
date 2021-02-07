@@ -8,7 +8,7 @@
 
 $(() => {
 
-const word = ["s", "w" , "o", "r" , "d"]
+const word = /*["s", "w" , "o", "r" , "d"]*/ ["f","i","s","h"]
 const alphabet = ["a", "b", "c", "d", "e", "f", "g","h","i", "j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 ///click on target
@@ -16,6 +16,7 @@ const alphabet = ["a", "b", "c", "d", "e", "f", "g","h","i", "j","k","l","m","n"
 //if text value is in word one change, if not, another
 
 let strikes = 0;
+let lettersCorrect = 0;
 
 function checkWord(e){
     const $chosen = $(e.target).text()
@@ -24,6 +25,10 @@ function checkWord(e){
         for(child of $('#container').children()){
             if($(child).text() == $chosen){
                 $(child).css('color','black')
+                lettersCorrect++
+                if(lettersCorrect == word.length){
+                    $('#chances').text("You got the word!")
+                }
             }
             }
     }else{
