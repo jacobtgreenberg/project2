@@ -15,6 +15,8 @@ const alphabet = ["a", "b", "c", "d", "e", "f", "g","h","i", "j","k","l","m","n"
 ///get targets value, text
 //if text value is in word one change, if not, another
 
+let strikes = 0;
+
 function checkWord(e){
     const $chosen = $(e.target).text()
     if(word.includes($chosen)){
@@ -25,7 +27,13 @@ function checkWord(e){
             }
             }
     }else{
-        $(e.target).css('background-color','red')
+        $(e.target).css('background-color','red');
+        strikes++;
+        if(strikes == 1){
+            $('#chances').text(strikes + " strike")
+        }else{
+            $('#chances').text(strikes + " strikes")
+        }
     }
 
 }

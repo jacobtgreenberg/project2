@@ -37,3 +37,13 @@
     border: 1px solid black;
 
 }
+
+#chances {
+    height: 30px;
+    width: 100px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 30px;
+}
