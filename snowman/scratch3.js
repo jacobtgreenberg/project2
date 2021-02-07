@@ -1,12 +1,28 @@
 
     $(() => {
 
-        const word = ["s", "w" , "o", "r" , "d" ,"s"] /*["f","i","s","h"]*/
+
+        const wordBank = [
+            ["f", "i", "s", "h"],
+            ["s","w","o","r","d"]
+        ]
+
+        let word = []
         const alphabet = ["a", "b", "c", "d", "e", "f", "g","h","i", "j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
         
         
         let strikes = 0;
         let lettersCorrect = 0;
+
+        
+
+        function pickWord() {
+            const $randomIndex = Math.floor(Math.random() * wordBank.length)
+            const $chosenWord = wordBank[$randomIndex]
+             for(letter of $chosenWord){
+                 word.push(letter)
+             }
+        }
 
         function setAlphabet() {
             for(letter of alphabet ){
@@ -69,6 +85,7 @@
                 $('#alpha').empty()
                 $('#container').empty()
                 $(e.target).remove()
+                word = []
                 setAlphabet()
                 setWord()
                 lettersCorrect = 0;
@@ -78,6 +95,7 @@
         }
         
     setAlphabet()
+    pickWord()
     setWord()
 
         
