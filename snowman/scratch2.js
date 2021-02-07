@@ -35,6 +35,16 @@
             const $div = $('<div>').addClass('replay')
             $div.text('Play Again')
             $('body').append($div)
+            $div.on('click' , (e) => {
+                $('#alpha').empty()
+                $('#container').empty()
+                $(e.target).remove()
+                setAlphabet()
+                setWord()
+                lettersCorrect = 0;
+                strikes = 0;
+                $('#chances').text(strikes + " strikes")
+            })
         }
         
 
@@ -63,16 +73,23 @@
         
         }
         
+        function setAlphabet() {
         for(letter of alphabet ){
             const $div = $('<div>').text(letter).addClass('omega')
             $('#alpha').append($div)
             $div.on('click', checkWord)
         }
+    }
         
+        function setWord() {
         for(letter of word){
             const $div = $('<div>').text(letter).addClass('current')
             $('#container').append($div)
         }
+    }
         
+    setAlphabet()
+    setWord()
+
         
     })
