@@ -8,6 +8,7 @@ $(()  => {
     let score = 0
     let start;
     let playerUnclick = false;
+    let freestyleMode = false;
     
     function toggleC(call, color, sound){
         $(call).toggleClass(color + 'Lit')
@@ -34,10 +35,12 @@ $(()  => {
         }
     }
 
+    let begin;
+
     function loopThroughComputerArray() {
         let counter = 0;
         playerUnclick = true;
-        const start = setInterval( () =>  {
+        begin = setInterval( () =>  {
             if(computerArray[counter] === 1){
                 toggleC('.red', 'red', '#ding')
             }else if(computerArray[counter] === 2){
@@ -49,7 +52,7 @@ $(()  => {
             }else{
                 lightRandomColor();
                 playerUnclick = false;
-                clearInterval(start);
+                clearInterval(begin);
                 
             }
             counter++
@@ -66,6 +69,10 @@ $(()  => {
         setTimeout(() => {
             $(event.target).toggleClass(color + 'Lit')
         }, 400)
+        if(freestyleMode == true){
+            $(sound).get(0).play()
+            return
+        }
         playerArray.push(number)
         if(computerArray[clickCounter] === playerArray[clickCounter]){
             $(sound).get(0).play();
@@ -103,6 +110,25 @@ $(()  => {
     $('.blue').on('click', stopRepeat)
     $('.yellow').on('click', stopRepeat)
     $('.green').on('click', stopRepeat)
+
+    $('.freestyle').on('click', () => {
+        if(freestyleMode == false){
+            playerUnclick = false
+            freestyleMode = true
+            clearInterval(begin)
+            $('#score').empty()
+            $('#hi_score').empty()
+            computerArray = []
+            playerArray = []
+            clickCounter = 0
+            $('.freestyle').text('new game')
+        }else{
+            freestyleMode = false
+            setTimeout(lightRandomColor, 1000)
+            setTimeout(repeatIntro, 1000)
+            $('.freestyle').text('freestyle')
+        }
+    })
 
 
     setTimeout(lightRandomColor, 1000)
