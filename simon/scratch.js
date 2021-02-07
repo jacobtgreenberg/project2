@@ -7,6 +7,7 @@ $(()  => {
     let clickCounter = 0
     let score = 0
     let start;
+    let playerUnclick = false;
     
     function toggleC(call, color, sound){
         $(call).toggleClass(color + 'Lit')
@@ -35,6 +36,7 @@ $(()  => {
 
     function loopThroughComputerArray() {
         let counter = 0;
+        playerUnclick = true;
         const start = setInterval( () =>  {
             if(computerArray[counter] === 1){
                 toggleC('.red', 'red', '#ding')
@@ -46,7 +48,9 @@ $(()  => {
                 toggleC('.green', 'green', '#beep')
             }else{
                 lightRandomColor();
-                clearInterval(start)
+                playerUnclick = false;
+                clearInterval(start);
+                
             }
             counter++
         }   
@@ -55,6 +59,7 @@ $(()  => {
     
     
     function toggle (event, color, number, sound) {
+        if(playerUnclick == false){
         $(event.target).toggleClass(color + 'Lit')
         setTimeout(() => {
             $(event.target).toggleClass(color + 'Lit')
@@ -81,6 +86,7 @@ $(()  => {
             }
             setTimeout(lightRandomColor, 1300)
             setTimeout(repeatIntro, 1300)
+        }
         }
     }
 
