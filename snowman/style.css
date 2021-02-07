@@ -1,0 +1,39 @@
+#alpha {
+    height: 40px;
+    width: 700px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.omega {
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.current {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 28px;
+}
+
+#container{
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    justify-content: space-around;
+    height: 60px;
+    width: 260px;
+    border: 1px solid black;
+
+}
