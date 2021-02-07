@@ -108,6 +108,7 @@
                 $('#alpha').empty()
                 $('#container').empty()
                 $(e.target).remove()
+                $('#chances').empty()
                 word = []
                 removeWord()
                 setAlphabet()
@@ -115,13 +116,11 @@
                 setWord()
                 lettersCorrect = 0;
                 strikes = 0;
-                $('#chances').text(strikes + " strikes")
+                // $('#chances').text(strikes + " strikes")
             })
         }
         
-    // setAlphabet()
-    // pickWord()
-    // setWord()
+ 
    
 
         
