@@ -9,6 +9,10 @@ div {
     display: inline-block;
 }
 
+div:hover {
+    cursor: pointer;
+}
+
 #score {
     color: white;
     font-size: 120px;

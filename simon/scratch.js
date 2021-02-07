@@ -70,7 +70,7 @@ $(()  => {
                 setTimeout(loopThroughComputerArray, 900)
             }
         }else{
-            prompt("You lose!")
+            $('#wrong').get(0).play()
         }
     }
 
@@ -78,11 +78,6 @@ $(()  => {
     $('.blue').on('click', () => toggle(event, 'blue', 2, '#bleep'))
     $('.yellow').on('click', () => toggle(event,'yellow', 3, '#ping'))
     $('.green').on('click', () => toggle(event,'green', 4, '#beep'))
-    
-    // $('.red').on('click', () => $('#ding').get(0).play())
-    // $('.yellow').on('click', () => $('#ping').get(0).play())
-    // $('.green').on('click', () => $('#beep').get(0).play())
-    // $('.blue').on('click', () => $('#bleep').get(0).play())
 
 
     setTimeout(lightRandomColor, 1000)
