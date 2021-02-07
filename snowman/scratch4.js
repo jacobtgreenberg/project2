@@ -61,6 +61,9 @@
 
         function checkWord(e){
             const $chosen = $(e.target).text()
+            if(playerCanClick == false){
+                return
+            }
             if(word.includes($chosen)){
                 $(e.target).remove();
                 letterCorrect(e)
@@ -71,6 +74,8 @@
             }   
         }
 
+        let playerCanClick = true;
+
         function letterCorrect(e) {
             for(child of $('#container').children()){
                 if($(child).text() == $(e.target).text()){
@@ -78,6 +83,7 @@
                     lettersCorrect++
                     if(lettersCorrect == word.length){
                         $('#chances').text("You got the word!")
+                        playerCanClick = false
                         playAgain()
                     }
                 }
@@ -89,6 +95,7 @@
                 $('#chances').text(strikes + " strike")
             }else if(strikes == 6){
                 $('#chances').text("Ya lose.")
+                playerCanClick = false
                 playAgain()
             }
             else{
@@ -105,6 +112,7 @@
                 $(child).css('color','black')
             }
             $div.on('click' , (e) => {
+                playerCanClick = true
                 $('#alpha').empty()
                 $('#container').empty()
                 $(e.target).remove()
@@ -116,7 +124,7 @@
                 setWord()
                 lettersCorrect = 0;
                 strikes = 0;
-                // $('#chances').text(strikes + " strikes")
+                
             })
         }
         
