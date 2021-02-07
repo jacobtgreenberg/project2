@@ -20,19 +20,15 @@ $(()  => {
         if(randomIndex === 1){
             toggleC('.red', 'red', '#ding')
             computerArray.push(1)
-            console.log("computer Array" + computerArray)
         }else if(randomIndex === 2){
             toggleC('.blue', 'blue', '#bleep')
             computerArray.push(2)
-            console.log(computerArray)
         }else if(randomIndex === 3){
             toggleC('.yellow', 'yellow', '#ping')
             computerArray.push(3)
-            console.log(computerArray)
         }else if(randomIndex === 4){
             toggleC('.green', 'green', '#beep')
             computerArray.push(4)
-            console.log(computerArray)
         }
     }
 
@@ -64,7 +60,6 @@ $(()  => {
         }, 400)
         playerArray.push(number)
         if(computerArray[clickCounter] === playerArray[clickCounter]){
-            console.log(playerArray[clickCounter])
             clickCounter++;
             if(clickCounter === computerArray.length){
                //  prompt("Next level!")
@@ -72,7 +67,7 @@ $(()  => {
                 playerArray = []
                 score = computerArray.length 
                 $('#score').text(score)
-                setTimeout(loopThroughComputerArray, 1000)
+                setTimeout(loopThroughComputerArray, 900)
             }
         }else{
             prompt("You lose!")
