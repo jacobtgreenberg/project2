@@ -6,13 +6,21 @@ body {
     height: 410px;
     width: 410px;
     margin: auto;
-    padding-top: 160px;
+    margin-top: 160px;
+}
+
+#scontainer {
+    /* border: 1px solid white; */
+    margin: auto;
+    margin-top: 30px;
+    width: 410px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .square {
     height: 200px;
     width: 200px;
-    border: 1px solid white;
     display: inline-block;
 }
 
