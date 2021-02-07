@@ -1,3 +1,8 @@
+p {
+    text-align: center;
+    margin-top: 40px;
+}
+
 #alpha {
     height: 40px;
     width: 700px;
@@ -26,8 +31,7 @@
     text-align: center;
     line-height: 40px;
     font-size: 28px;
-    /* color: white; */
-    color: black;
+    color: white;
 }
 
 .omega:hover, .replay {
@@ -50,7 +54,7 @@
     width: 200px;
     /* border: 1px solid black; */
     margin: auto;
-    margin-top: 30px;
+    margin-top: 80px;
     text-align: center;
     line-height: 30px;
 }
