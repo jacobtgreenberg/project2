@@ -28,7 +28,7 @@
     color: white;
 }
 
-.omega:hover {
+.omega:hover, .replay {
     cursor: pointer;
 }
 
@@ -45,10 +45,20 @@
 
 #chances {
     height: 30px;
-    width: 100px;
-    border: 1px solid black;
+    width: 200px;
+    /* border: 1px solid black; */
     margin: auto;
     margin-top: 30px;
     text-align: center;
     line-height: 30px;
+}
+
+.replay {
+    height:30px;
+    width: 100px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid black;
 }
