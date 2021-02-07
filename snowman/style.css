@@ -69,6 +69,10 @@ p {
     cursor: pointer;
 }
 
+.temp:hover {
+    cursor: default;
+}
+
 #container{
     display: flex;
     margin: auto;

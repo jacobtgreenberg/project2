@@ -84,6 +84,8 @@
                     if(lettersCorrect == word.length){
                         $('#chances').text("You got the word!")
                         playerCanClick = false
+                        ////////
+                        $('.omega').toggleClass('temp')
                         playAgain()
                     }
                 }
@@ -96,6 +98,8 @@
             }else if(strikes == 6){
                 $('#chances').text("Ya lose.")
                 playerCanClick = false
+                //////
+                $('.omega').toggleClass('temp')
                 playAgain()
             }
             else{
