@@ -64,3 +64,24 @@ body {
 .greenLit {
     background-color: #c3ffb8;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.freestyle {
+    text-align: center;
+    padding-bottom: 60px;
+    color: black;
+    display: block;
+    
+    /* position: absolute;
+    bottom: 0; */
+}
+
+.freestyle:hover {
+    color: white;
+    cursor: pointer;
+}
