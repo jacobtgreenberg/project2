@@ -81,6 +81,9 @@
             const $div = $('<div>').addClass('replay')
             $div.text('Play Again')
             $('body').append($div)
+            for(child of $('#container').children()){
+                $(child).css('color','black')
+            }
             $div.on('click' , (e) => {
                 $('#alpha').empty()
                 $('#container').empty()
