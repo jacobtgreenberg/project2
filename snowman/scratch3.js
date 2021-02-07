@@ -87,6 +87,7 @@
                 $(e.target).remove()
                 word = []
                 setAlphabet()
+                pickWord()
                 setWord()
                 lettersCorrect = 0;
                 strikes = 0;
