@@ -37,6 +37,18 @@
             $('body').append($div)
         }
         
+
+        function letterIncorrect() {
+            if(strikes == 1){
+                $('#chances').text(strikes + " strike")
+            }else if(strikes == 6){
+                $('#chances').text("Ya lose.")
+            }
+            else{
+                $('#chances').text(strikes + " strikes")
+            }
+        }
+
         function checkWord(e){
             const $chosen = $(e.target).text()
             if(word.includes($chosen)){
@@ -45,14 +57,7 @@
             }else{
                 $(e.target).remove();
                 strikes++;
-                if(strikes == 1){
-                    $('#chances').text(strikes + " strike")
-                }else if(strikes == 6){
-                    $('#chances').text("Ya lose.")
-                }
-                else{
-                    $('#chances').text(strikes + " strikes")
-                }
+                letterIncorrect()
             }
         
         }
