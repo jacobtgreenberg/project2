@@ -1,6 +1,6 @@
 $(()  => {
 
-    const computerArray = [];
+    let computerArray = [];
     let playerArray = [];
     //// will be applied to loopThroughCA, need to limit sounds duration
     let level = 3005;
@@ -71,6 +71,10 @@ $(()  => {
             }
         }else{
             $('#wrong').get(0).play()
+            computerArray = []
+            playerArray = []
+            clickCounter = 0
+            setTimeout(lightRandomColor, 1300)
         }
     }
 
