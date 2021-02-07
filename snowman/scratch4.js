@@ -47,9 +47,6 @@
         function setAlphabet() {
             for(letter of alphabet ){
                 const $div = $('<div>').text(letter).addClass('omega')
-                if($div.text() === 'y' || $div.text() === 'z'){
-                    $div.addClass('yz')
-                }
                 $('#alpha').append($div)
                 $div.on('click', checkWord)
             }
