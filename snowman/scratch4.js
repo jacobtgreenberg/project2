@@ -18,9 +18,11 @@
         let lettersCorrect = 0;
         let $chosenWord;
         
-        function check(){
-            let argh = wordBank.indexOf($chosenWord)
-            console.log(argh)
+        function removeWord(){
+            console.log(wordBank)
+            let wordToRemove = wordBank.indexOf($chosenWord)
+            wordBank.splice(wordToRemove, 1)
+            console.log(wordBank)
         }
 
         function pickWord() {
@@ -99,6 +101,7 @@
                 $('#container').empty()
                 $(e.target).remove()
                 word = []
+                removeWord()
                 setAlphabet()
                 pickWord()
                 setWord()
