@@ -9,6 +9,7 @@ $(()  => {
     let start;
     let playerUnclick = false;
     let freestyleMode = false;
+    let begin;
     
     function toggleC(call, color, sound){
         $(call).toggleClass(color + 'Lit')
@@ -34,8 +35,21 @@ $(()  => {
             computerArray.push(4)
         }
     }
-
-    let begin;
+    function repeatIntro() {
+        start = setInterval( () =>  {
+            if(computerArray[0] === 1){
+                toggleC('.red', 'red', '#ding')
+            }else if(computerArray[0] === 2){
+                toggleC('.blue', 'blue', '#bleep')
+            }else if(computerArray[0] === 3){
+                toggleC('.yellow', 'yellow', '#ping')
+            }else if(computerArray[0] === 4){
+                toggleC('.green', 'green', '#beep')
+            }
+        }   
+        , 4000)
+    }
+    
 
     function loopThroughComputerArray() {
         let counter = 0;
@@ -149,20 +163,7 @@ $(()  => {
 
    
 
-    function repeatIntro() {
-        start = setInterval( () =>  {
-            if(computerArray[0] === 1){
-                toggleC('.red', 'red', '#ding')
-            }else if(computerArray[0] === 2){
-                toggleC('.blue', 'blue', '#bleep')
-            }else if(computerArray[0] === 3){
-                toggleC('.yellow', 'yellow', '#ping')
-            }else if(computerArray[0] === 4){
-                toggleC('.green', 'green', '#beep')
-            }
-        }   
-        , 4000)
-    }
+
 
     function stopRepeat() {
         clearInterval(start)
