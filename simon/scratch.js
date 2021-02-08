@@ -70,7 +70,7 @@ $(()  => {
         if(computerArray[clickCounter] === playerArray[clickCounter]){
             $(sound).get(0).play();
             clickCounter++;
-            if(clickCounter === computerArray.length){              
+            if(clickCounter === computerArray.length){     
                 clickCounter = 0
                 playerArray = []
                 score = computerArray.length 
@@ -112,6 +112,7 @@ $(()  => {
 
     function repeatIntro() {
         start = setInterval( () =>  {
+            console.log('bleep')
             if(computerArray[0] === 1){
                 toggleC('.red', 'red', '#ding')
             }else if(computerArray[0] === 2){

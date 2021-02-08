@@ -51,7 +51,7 @@ $(()  => {
                 toggleC('.green', 'green', '#beep')
             }else{
                 lightRandomColor();
-                playerUnclick = false;
+                playerUnclick = false
                 clearInterval(begin);
                 
             }
@@ -81,15 +81,16 @@ $(()  => {
                 clickCounter = 0
                 playerArray = []
                 score = computerArray.length 
-                $('#score').text(score)
+                $('.score').text(score)
                 setTimeout(loopThroughComputerArray, 900)
             }
         }else{
             $('#wrong').get(0).play()
+            clearInterval(begin)
             computerArray = []
             playerArray = []
             clickCounter = 0
-            $('#score').empty()
+            $('.score').empty()
             if(score > $('#hi_score').text()){
                 $('#hi_score').text(score)
             }
@@ -111,19 +112,31 @@ $(()  => {
     $('.yellow').on('click', stopRepeat)
     $('.green').on('click', stopRepeat)
 
+    $('.score').on('click', () => {
+        if(freestyleMode == false){
+            return
+        }
+        
+        $('#wrong').get(0).play()
+    })
+
     $('.freestyle').on('click', () => {
         if(freestyleMode == false){
             playerUnclick = false
             freestyleMode = true
             clearInterval(begin)
-            $('#score').empty()
+            $('.score').empty()
             $('#hi_score').empty()
             computerArray = []
             playerArray = []
             clickCounter = 0
             $('.freestyle').text('new game')
+            $('.score').text(0)
+            $('.score').toggleClass('fscore')
         }else{
             freestyleMode = false
+            $('.score').empty()
+            $('.score').toggleClass('fscore')
             setTimeout(lightRandomColor, 1000)
             setTimeout(repeatIntro, 1000)
             $('.freestyle').text('freestyle')

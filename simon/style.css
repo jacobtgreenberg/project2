@@ -27,8 +27,8 @@ body {
 .square:hover {
     cursor: pointer;
 }
-
-#score, #hi_score {
+/* score is an ID in the index */
+.score, #hi_score {
     color: white;
     font-size: 120px;
 }
@@ -82,6 +82,15 @@ body {
 }
 
 .freestyle:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.fscore {
+    color: black;
+}
+
+.fscore:hover {
     color: white;
     cursor: pointer;
 }
