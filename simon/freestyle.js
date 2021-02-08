@@ -35,6 +35,7 @@ $(()  => {
             computerArray.push(4)
         }
     }
+
     function repeatIntro() {
         start = setInterval( () =>  {
             if(computerArray[0] === 1){
@@ -50,6 +51,9 @@ $(()  => {
         , 4000)
     }
     
+    function stopRepeat() {
+        clearInterval(start)
+    }
 
     function loopThroughComputerArray() {
         let counter = 0;
@@ -71,10 +75,9 @@ $(()  => {
             }
             counter++
         }   
-        , 800)
+        , 600)
     }
-    
-    
+
     function toggle (event, color, number, sound) {
         if(playerUnclick == true){
             return
@@ -114,8 +117,6 @@ $(()  => {
         
     }
 
-  
-
     $('.red').on('click', () => toggle(event, 'red', 1, '#ding'))
     $('.blue').on('click', () => toggle(event, 'blue', 2, '#bleep'))
     $('.yellow').on('click', () => toggle(event,'yellow', 3, '#ping'))
@@ -129,8 +130,7 @@ $(()  => {
     $('.score').on('click', () => {
         if(freestyleMode == false){
             return
-        }
-        
+        }        
         $('#wrong').get(0).play()
     })
 
@@ -162,11 +162,4 @@ $(()  => {
     setTimeout(repeatIntro, 1000)
 
    
-
-
-
-    function stopRepeat() {
-        clearInterval(start)
-    }
-     
     })
