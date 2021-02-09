@@ -17,6 +17,7 @@ li {
     height: 100px;
     border: 1px solid black;
     line-height: 100px;
+    margin: 3px 3px 3px 4px;
 
 }
 .column {
@@ -27,4 +28,47 @@ li {
 
 .container {
     width: 1000px;
+}
+
+.modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto;
+    /*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+    display: none;
+}
+
+.text_box {
+    background-color: white;
+	height: 350px;
+	width: 550px;
+    border-radius: 2px;
+    margin: 150px auto;
+    text-align: center;
+    
+}
+
+.result {
+    line-height: 350px;
+}
+
+.question {
+    text-align: center;
+    padding-top: 40px;
+    
+
+}
+
+.qList {
+    margin-top: 40px;
+}
+
+.qList li {
+    padding-top: 30px;
 }

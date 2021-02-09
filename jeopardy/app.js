@@ -1,13 +1,9 @@
 
-///if you hardcode the divs you have to give each one a unique id
-
-
-
 $(() => {
 
 let score=0
-let categories = ["fish" , "music" , "miscellaneous"]
-let value = [100 , 200, 300]
+let categories = ["fish" , "music" , "miscellaneous", "science", "vacation spots"]
+let value = [100 , 200, 300, 400, 500]
 let question = [
     ["what is your favorite fish", "what is flounder","how do you cook eel"],
     ["who is beethoven" , "how many sharps in the key of g", "what is music"],
@@ -16,7 +12,7 @@ let question = [
 let answers = [
 
     [ //this is the fish categories array
-    [{name: "flounder", value: false},{name:"trout", value: false},{name:"bass", value:true}],
+    [{name: "flounder", value: false},{name:"trout", value: false},{name:"bass", value:true},{name:"fluke",value: false}],
     [{name: "good" , value: true}, {name: "a reptile", value: false},{name: "it depends" , value: false}],
     [{name: "sautee" , value: false}, {name: "fire", value: true}, {name: "don't", value:false}]
     ],
@@ -40,25 +36,29 @@ let answers = [
 
 function display(i,event,k) {
     $(event.target).empty()
-    const $div = $('<div>').text(question[k][i])
-    const $ul = $('<ul>')
-    $div.append($ul)
+    $('.modal').css('display','block')
+    const $div = $('<div>').text(question[k][i]).addClass('question')
+    const $ul = $('<ul>').addClass('qList')
+    
     for(let j = 0; j < answers[k][i].length; j++){
         const $li = $('<li>').text(answers[k][i][j].name)
         $li.on('click',() => checkAnswer(i,j,k))
         $ul.append($li)
     }
-    $('.modal').append($div)
+    $('.text_box').append($div)
+    $('.text_box').append($ul)
+
 }
 
 function checkAnswer(i,j,k) {
-    if(answers[k][i][j].value == true){
-        $('.modal').empty()
-        $('.modal').text("Correct!")
+    $('.text_box').toggleClass('result')
+    if(answers[k][i][j].value == true){ 
+        $('.text_box').empty()
+        $('.text_box').text("Correct!")
         score += value[i]
         $('.score').text(score)
     }else{
-        $('.modal').text("I'm sorry the correct answer was")
+        $('.text_box').text("I'm sorry the correct answer was")
         score -= value[i]
         $('.score').text(score)
     }
