@@ -17,7 +17,7 @@ li {
 
 .square {
     text-align:center;
-    width:150px;
+    width:180px;
     height: 100px;
     border: 2px solid black;
     line-height: 100px;
@@ -26,30 +26,50 @@ li {
     margin-right: 20px; */
     background-color: blue;
     color: #FFCC00;
-    font-size: 55px;
+    font-size: 65px;
     font-weight: bold;
-    border-radius: 4%;
+    /* border-radius: 4%; */
+    margin-bottom: 1px;
 
 }
 
 .title {
     color: white;
     font-size: 30px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    /* margin-top: 4px; */
 }
 
 .column {
     display:inline-block;
     /* border: 1px solid black; */
-    width: 153px;
+    width: 183px;
+}
+
+#vacationspots {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 28px;
+    
+    
+}
+
+#miscellaneous {
+    font-size: 18px;
 }
 
 .container {
-    width: 766px;
+    width: 915px;
     border: 2px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
     /* margin-top: 80px; */
     margin: 80px auto;
     background-color:black;
-    border-radius: 1%;
+    /* border-radius: 1%; */
 }
 
 .modal {

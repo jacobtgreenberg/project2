@@ -118,7 +118,7 @@ function closeModal() {
 
 for(let k = 0; k < categories.length; k++){
     const $column = $('<div>').addClass('column')
-    const $title = $('<div>').addClass('square').addClass('title').attr('id',`${k}`)
+    const $title = $('<div>').addClass('square').addClass('title').attr('id', categories[k].replace(" ",""))
     $title.text(categories[k].toUpperCase())
     const $ul = $('<ul>')
     $('.container').append($column)
