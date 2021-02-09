@@ -1,3 +1,7 @@
+* {
+    font-family: helvetica;
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -21,11 +25,18 @@ li {
     /* margin: 0 20px 0 0;
     margin-right: 20px; */
     background-color: blue;
-    color: yellow;
-    font-size: 40px;
+    color: #FFCC00;
+    font-size: 55px;
+    font-weight: bold;
     border-radius: 4%;
 
 }
+
+.title {
+    color: white;
+    font-size: 30px;
+}
+
 .column {
     display:inline-block;
     /* border: 1px solid black; */
@@ -34,7 +45,7 @@ li {
 
 .container {
     width: 766px;
-    border: 1px solid black;
+    border: 2px solid black;
     /* margin-top: 80px; */
     margin: 80px auto;
     background-color:black;

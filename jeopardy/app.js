@@ -3,7 +3,7 @@ $(() => {
 
 let score=0
 let categories = ["fish" , "music" , "miscellaneous", "science", "vacation spots"]
-let value = [100 , 200, 300, 400, 500]
+let value = ["$100" , "$200", "$300", "$400", "$500"]
 let question = [
     ["What is the most popular fish?", "What is flounder?","How can you cook eel?","What is a group of fish called?","Where do fish live?"],
     ["Who is Beethoven?" , "How many sharps are in the key of g?", "Which of the following is a musical genre?", "Which of the following is a string instrument?", "What instrument did John Coltrane play?"],
@@ -118,7 +118,8 @@ function closeModal() {
 
 for(let k = 0; k < categories.length; k++){
     const $column = $('<div>').addClass('column')
-    const $title = $('<div>').text(categories[k]).addClass('square')
+    const $title = $('<div>').addClass('square').addClass('title').attr('id',`${k}`)
+    $title.text(categories[k].toUpperCase())
     const $ul = $('<ul>')
     $('.container').append($column)
     $column.append($title)
