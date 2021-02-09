@@ -58,6 +58,9 @@ let answers = [
 
 
 
+
+
+
 function display(i,event,k) {
     $(event.target).empty()
     $('.modal').css('display','block')
@@ -86,10 +89,18 @@ function checkAnswer(i,j,k) {
         $('.score').text(score)
         
     }else{
-        $('.text_box').text("I'm sorry the correct answer was")
+        $('.text_box').text("I'm sorry the correct answer was " + correctAnswer(k, i).toLowerCase())
         score -= value[i]
         $('.score').text(score)
         
+    }
+}
+
+function correctAnswer(k, i) {
+    for(object of answers[k][i]){
+        if(object.value == true){
+            return object.name
+        } 
     }
 }
 
