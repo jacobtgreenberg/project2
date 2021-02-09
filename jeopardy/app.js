@@ -62,7 +62,14 @@ let answers = [
 
 
 function display(i,event,k) {
-    $(event.target).empty()
+    if($(event.target).attr('class') == 'square stop'){
+        return
+    }
+    console.log($(event.target))
+    //////
+    $(event.target).text("")
+    console.log($(event.target))
+    $(event.target).addClass('stop')
     $('.modal').css('display','block')
     const $div = $('<div>').text(question[k][i]).addClass('question')
     const $ul = $('<ul>').addClass('qList')
@@ -79,18 +86,20 @@ function display(i,event,k) {
 
 let clickOut = false
 
+
 function checkAnswer(i,j,k) {
+    let scoreValue = parseInt(value[i].replace('$',""))
     $('.text_box').toggleClass('result')
     setTimeout(() => clickOut = true, 500)
     if(answers[k][i][j].value == true){ 
         $('.text_box').empty()
-        $('.text_box').text("Correct!")
-        score += value[i]
+        $('.text_box').text("Correct!").css('font-size','80px')
+        score += scoreValue
         $('.score').text(score)
         
     }else{
-        $('.text_box').text("I'm sorry the correct answer was " + correctAnswer(k, i).toLowerCase())
-        score -= value[i]
+        $('.text_box').text("I'm sorry the correct answer was " + correctAnswer(k, i).toLowerCase()).css('font-size','35px')
+        score -= scoreValue
         $('.score').text(score)
         
     }
@@ -110,6 +119,7 @@ function closeModal() {
     if(clickOut == false){
         return
     }
+    $('.text_box').css('font-size','25px')
     $('.modal').css('display','none')
     $('.text_box').toggleClass('result')
     $('.text_box').empty()
